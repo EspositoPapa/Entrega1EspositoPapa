@@ -1,0 +1,51 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenioQueCambia %}
+<div class="col">
+    <h3>Formularios altas</h3>
+    <form Class="row" action="altasCursos" method="POST">
+        {% csrf_token %}
+        <h2>Cursos</h2>
+        <label for="nombre" >Nombre:</label>
+        <input type="text" name="nombre">
+        <label for="comision">Comision:</label>
+        <input type="text" name="comision">
+
+        <input type="submit" value="Enviar">
+        
+    </form>
+    <hr>
+    <form Class="row" action="altasAlumnos" method="POST">
+        {% csrf_token %}
+        <h2>Estudiantes</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido">
+        <label for="email">Email:</label>
+        <input type="email" name="email">
+
+        <input type="submit" value="Enviar">
+
+    </form>
+    <hr>
+    <form Class="row" action="altasProfesores" method="POST">
+        {% csrf_token %}
+        <h2>Profesores</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido">
+        <label for="email">Email:</label>
+        <input type="email" name="email">
+        <label for="profesion">Profesion:</label>
+        <input type="text" name="profesion">
+        
+        <input type="submit" value="Enviar">
+
+    </form>
+</div>
+    
+
+{% endblock %}

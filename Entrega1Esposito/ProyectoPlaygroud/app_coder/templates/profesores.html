@@ -1,0 +1,23 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenioQueCambia %}
+    <h1>Vista Profesores</h1>
+
+    <table style="border:1px; margin: 0 auto">
+        <tr style="background-color: aquamarine">
+          <td><strong>Nombre</strong></td>&nbsp;
+          <td><strong>Edad</strong></td>&nbsp;
+          <td><strong>Email</strong></td>&nbsp;
+          <td><strong>Profesion</strong></td>&nbsp;
+        </tr>
+        {% for profe in bdprofe %}
+        <tr style="background-color: lightcyan">
+          <td>{{profe.nombre}}</td>
+          <td>{{profe.apellido}}</td>
+          <td>{{profe.email}}</td>
+          <td>{{profe.profesion}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+{% endblock %}

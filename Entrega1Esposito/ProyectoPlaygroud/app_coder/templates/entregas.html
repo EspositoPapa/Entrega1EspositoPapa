@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenioQueCambia %}
+    <h1>Aquí están las entregas del Alumno</h1>
+
+    {% if entrega %}
+    <div style="margin: 0 auto;display: block;width: 50%;background-color: coral;">
+      <ul>
+        {% for entrega in entrega %}
+        <li><strong>Nombre:</strong> &nbsp;{{entrega.nombre}}</li>
+        <li><strong>Fecha de entrega:</strong> &nbsp;{{entrega.FechaDeEntrega}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p style="color:black; size:25px">No se encontraron resultados</p>
+    {% endif %}   
+    </div>
+   
+
+{% endblock %}
