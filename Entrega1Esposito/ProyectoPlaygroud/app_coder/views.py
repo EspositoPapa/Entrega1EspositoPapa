@@ -82,8 +82,9 @@ def altasEntregas(request):
         return HttpResponse(texto)
 
 def busca(request):
-         nombre=request.GET['nombre']
-         entrega=Entregable.objects.filter(nombre__icontains= nombre)
-         return render (request,'entregas.html',{"entrega":entrega})
+    if request.GET['nombre']:
+        nombre=request.GET['nombre']
+        entrega=Entregable.objects.filter(nombre__icontains= nombre)
+        return render (request,'entregas.html',{"entrega":entrega})
     else:
-         return HttpResponse("Campos Vacios o Incorrecto")
+        return HttpResponse("Campos Vacios o Incorrecto")
