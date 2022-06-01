@@ -5,8 +5,7 @@
 <main>
    <h1>Buscador de trabajos entregados</h1>
     <!-- #Buscador de alumno y entregables-->
-  <form action="busca" method="POST">
-    {% csrf_token %}
+  <form action="busca">
     <label for="nombre">NOMBRE:</label>
     <input type="text" name="nombre">
     <!-- BOTON  -->
@@ -15,8 +14,9 @@
 
 
 <div style="margin-top:50px; padding: 50px;">
-  <form action="altasEntregas">
+  <form action="altasEntregas" method="POST">
     <h1>Nuevas Entregas</h1>
+     {% csrf_token %}
     <label for="nombre">Nombre:</label>
     <input type="text" name="nombre">
 
