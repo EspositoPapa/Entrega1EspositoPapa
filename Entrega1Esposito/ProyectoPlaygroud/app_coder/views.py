@@ -82,8 +82,7 @@ def altasEntregas(request):
         return HttpResponse(texto)
 
 def busca(request):
-    if request.POST['nombre']:
-         nombre=request.POST['nombre']
+         nombre=request.GET['nombre']
          entrega=Entregable.objects.filter(nombre__icontains= nombre)
          return render (request,'entregas.html',{"entrega":entrega})
     else:
